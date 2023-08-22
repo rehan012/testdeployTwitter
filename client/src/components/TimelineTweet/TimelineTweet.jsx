@@ -13,7 +13,7 @@ const TimelineTweet = () => {
     const fetchData = async () => {
       try {
         const timelineTweets = await axios.get(
-          `/tweets/timeline/${currentUser._id}`
+          `https://server-glkg.onrender.com/api/tweets/timeline/${currentUser._id}`
         );
 
         setTimeLine(timelineTweets.data);

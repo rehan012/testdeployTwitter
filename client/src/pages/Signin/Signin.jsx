@@ -31,7 +31,7 @@ const Signin = () => {
     dispatch(loginStart());
 
     try {
-      const res = await axios.post("/auth/signup", {
+      const res = await axios.post("https://server-glkg.onrender.com/api/auth/signup", {
         username,
         email,
         password,

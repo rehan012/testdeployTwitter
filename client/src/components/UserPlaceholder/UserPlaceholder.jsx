@@ -10,7 +10,7 @@ const UserPlaceholder = ({ setUserData, userData }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const userProfile = await axios.get(`/users/find/${id}`);
+        const userProfile = await axios.get(`https://server-glkg.onrender.com/api/users/find/${id}`);
         setUserData(userProfile.data);
       } catch (e) {
         console.log(e);

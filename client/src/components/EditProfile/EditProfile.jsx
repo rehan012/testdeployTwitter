@@ -61,7 +61,7 @@ const EditProfile = ({ setOpen }) => {
   // };
 
   const handleDelete = async () => {
-    const deleteProfile = await axios.delete(`/users/${currentUser._id}`);
+    const deleteProfile = await axios.delete(`https://server-glkg.onrender.com/api/users/${currentUser._id}`);
     dispatch(logout());
     navigate("/signin");
   };
