@@ -16,7 +16,7 @@ export const signup = async (req, res, next) => {
         const { password, ...othersData } = newUser._doc;
         res
             .cookie("access_token", token, {
-                sameSite: 'none'
+                sameSite: 'none', secure: true
             })
             .status(200)
             .json(othersData);
@@ -39,7 +39,7 @@ export const signin = async (req, res, next) => {
         const { password, ...othersData } = user._doc;
 
         res
-            .cookie("access_token", token, {httpOnly: false,sameSite: 'none'})
+            .cookie("access_token", token, {sameSite: 'none', secure: true})
             .status(200)
             .json(othersData);
     } catch (err) {
