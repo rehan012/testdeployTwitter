@@ -40,7 +40,7 @@ const Profile = () => {
       try {
         const follow = await axios.put(`https://server-glkg.onrender.com/api/users/follow/${id}`, {
           id: currentUser._id,
-        });
+        }, {withCredentials: true});
         dispatch(following(id));
       } catch (err) {
         console.log("error", err);
@@ -49,7 +49,7 @@ const Profile = () => {
       try {
         const unfollow = await axios.put(`https://server-glkg.onrender.com/api/users/unfollow/${id}`, {
           id: currentUser._id,
-        });
+        }, {withCredentials: true});
 
         dispatch(following(id));
       } catch (err) {
