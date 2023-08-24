@@ -3,7 +3,6 @@ import cors from 'cors';
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 import cookieParser from "cookie-parser";
-import { verifyToken } from "./verifyToken.js";
 
 import userRoutes from "./routes/users.js";
 import authRoutes from "./routes/auths.js";
@@ -33,7 +32,6 @@ app.use(cors({
 app.set('trust proxy', true)
 app.use(cookieParser());
 app.use(express.json());
-app.use(verifyToken);
 
 
 app.use("/api/users", userRoutes);
