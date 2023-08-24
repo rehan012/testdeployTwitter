@@ -29,8 +29,10 @@ app.use(cors({
   credentials: true
 }))
 
+app.set('trust proxy', true)
 app.use(cookieParser());
 app.use(express.json());
+
 app.use("/api/users", userRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/tweets", tweetRoutes);
