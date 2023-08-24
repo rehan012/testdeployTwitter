@@ -22,7 +22,7 @@ const connect = () => {
       throw err;
     });
 };
-
+app.use(cookieParser());
 app.use(cors({
   origin: 'https://twitterlive.vercel.app',
   methods: ['GET','POST','PUT','DELETE'],
@@ -30,7 +30,7 @@ app.use(cors({
 }))
 
 app.set('trust proxy', true)
-app.use(cookieParser());
+
 app.use(express.json());
 
 
