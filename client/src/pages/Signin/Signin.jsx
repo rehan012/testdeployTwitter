@@ -18,7 +18,7 @@ const Signin = () => {
     e.preventDefault();
     dispatch(loginStart());
     try {
-      const res = await axios.post("https://server-glkg.onrender.com/api/auth/signin", { username, password });
+      const res = await axios.post("https://server-glkg.onrender.com/api/auth/signin", { username, password }, {withCredentials: true});
       dispatch(loginSuccess(res.data));
       navigate("/");
     } catch (err) {
@@ -35,7 +35,7 @@ const Signin = () => {
         username,
         email,
         password,
-      });
+      }, {withCredentials: true});
       dispatch(loginSuccess(res.data));
       navigate("/");
     } catch (err) {
