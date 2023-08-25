@@ -18,9 +18,7 @@ const MainTweet = () => {
         userId: currentUser._id,
         description: tweetText,
       },{withCredentials: true});
-
-       // Update the state to trigger a re-render of TimelineTweet
-       setTweetPosted((prev) => prev + 1);
+      window.location.reload(false);
     } catch (err) {
       console.log(err);
     }
@@ -47,7 +45,7 @@ const MainTweet = () => {
           Tweet
         </button>
       </form>
-      <TimelineTweet key={tweetPosted} />
+      <TimelineTweet />
     </div>
   );
 };

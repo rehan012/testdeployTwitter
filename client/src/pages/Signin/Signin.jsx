@@ -45,7 +45,7 @@ const Signin = () => {
 
   return (
     <form className="bg-gray-200 flex flex-col py-12 px-8 rounded-lg w-8/12 md:w-6/12 mx-auto gap-10">
-      <p className="font-bold text-center">Enable Third-Party Cookies in Your Browser Settings for a Seamless JWT Experience!</p>
+      <p className="text-center">Enable Third-Party Cookies in Your Browser Settings for a Seamless JWT Experience!</p>
       <h2 className="text-3xl font-bold text-center">Sign in to Twitter</h2>
 
       <input
