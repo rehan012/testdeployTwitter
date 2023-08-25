@@ -16,7 +16,7 @@ const MainTweet = () => {
         userId: currentUser._id,
         description: tweetText,
       },{withCredentials: true});
-      window.location.reload(false);
+      // window.location.reload(false);
     } catch (err) {
       console.log(err);
     }
