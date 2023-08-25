@@ -39,7 +39,7 @@ const Tweet = ({ tweet, setData }) => {
     try {
       const like = await axios.put(`https://server-glkg.onrender.com/api/tweets/${tweet._id}/like`, {
         id: currentUser._id,
-      });
+      },{withCredentials: true});
 
       if (location.includes("profile")) {
         const newData = await axios.get(`https://server-glkg.onrender.com/api/tweets/user/all/${id}`);

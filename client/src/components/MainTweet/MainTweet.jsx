@@ -6,9 +6,6 @@ import axios from "axios";
 
 const MainTweet = () => {
   const [tweetText, setTweetText] = useState("");
-  const [tweetPosted, setTweetPosted] = useState(0);
-
-
   const { currentUser } = useSelector((state) => state.user);
 
   const handleSubmit = async (e) => {
@@ -18,6 +15,7 @@ const MainTweet = () => {
         userId: currentUser._id,
         description: tweetText,
       },{withCredentials: true});
+      
       window.location.reload(false);
     } catch (err) {
       console.log(err);
