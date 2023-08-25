@@ -6,6 +6,8 @@ import axios from "axios";
 
 const MainTweet = () => {
   const [tweetText, setTweetText] = useState("");
+  const [tweetPosted, setTweetPosted] = useState(0);
+
 
   const { currentUser } = useSelector((state) => state.user);
 
@@ -16,7 +18,9 @@ const MainTweet = () => {
         userId: currentUser._id,
         description: tweetText,
       },{withCredentials: true});
-      // window.location.reload(false);
+
+       // Update the state to trigger a re-render of TimelineTweet
+       setTweetPosted((prev) => prev + 1);
     } catch (err) {
       console.log(err);
     }
@@ -43,7 +47,7 @@ const MainTweet = () => {
           Tweet
         </button>
       </form>
-      <TimelineTweet />
+      <TimelineTweet key={tweetPosted} />
     </div>
   );
 };
