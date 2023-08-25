@@ -15,7 +15,7 @@ const MainTweet = () => {
       const submitTweet = await axios.post("https://server-glkg.onrender.com/api/tweets", {
         userId: currentUser._id,
         description: tweetText,
-      });
+      },{withCredentials: true});
       window.location.reload(false);
     } catch (err) {
       console.log(err);
